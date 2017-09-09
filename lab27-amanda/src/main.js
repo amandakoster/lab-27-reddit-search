@@ -3,8 +3,6 @@ import React from 'react'
 import ReactDom from 'react-dom'
 import superagent from 'superagent'
 
-
-
 //let renderIf = (test, component) => test? component ; undefined
 
 class SearchForm extends React.Component {
@@ -82,7 +80,7 @@ class App extends React.Component {
         console.log(res.body)
         this.setState({
           topiclookup: res.body.data.children,
-          serchErrorMessage: null,
+          searchErrorMessage: null,
         })
       })
       .catch(err => {
@@ -90,7 +88,6 @@ class App extends React.Component {
         this.setState({
           hasError:true,
         })
-        console.log(this.state.topiclookup[0].data.title)
       })
   }
 
